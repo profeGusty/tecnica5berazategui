@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.E.S.T N°5"</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/estilosnoticias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+</head>
+<body>
+   <header>
+    <div class="navbar-container">
+        <div class="navbar-content">
+            <a href="index.html" class="logo">
+                <img src="./LOGO2.webp" alt="Logo EEST N°5">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#noticias">Noticias</a></li>
+                    <li><a href="#about-school">Nosotros</a></li>
+                    <li><a href="#tecnicaturas">Carreras</a></li>
+                    <li><a href="https://proyectos.tecnica5berazategui.com/" target="_blank">Docentes</a></li>
+                    <li><a href="https://marcelo.tecnica5berazategui.com">Galería</a></li>
+                    <li><a href="#centro">C. Estudiantes</a></li>
+                    <li><a href="#contact-info">Contacto</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="hero-text">
+        <h1>E.E.S.T N°5</h1>
+        <p>"Tecnología y Habilidades para el Futuro"</p>
+    </div>
+</header>
+    <main>
+
+        <!-- <section id="noticias">
+             <div id="noticias-container" class="main">
+                 <h2>Últimas Noticias</h2>
+             <p id="cargando-mensaje">Cargando las últimas noticias...</p>
+             </div>
+                <div id="ver-mas-container">
+                  <a href="archivo.html" class="boton-archivo">Ver Todas las Noticias</a>
+                </div>
+        </section> -->
+
+        <section id="about-school">
+            <h2>Nuestra Escuela: Formando el Futuro</h2>
+            <div class="about-content">
+                <img src="./images/historia.webp" alt="Entrada principal de la Escuela Técnica N°5">
+                <p>La Escuela de Educación Secundaria Técnica N°5 "Dr. Manuel Sadosky", fundada en 1991, se ha consolidado como un pilar fundamental en la formación de jóvenes talentos en nuestra comunidad. Nos dedicamos a brindar una educación técnica de vanguardia, con un fuerte compromiso con la excelencia académica y el desarrollo integral de nuestros estudiantes.</p>
+                <p>Nuestra misión es preparar a los futuros profesionales para los desafíos del mundo moderno, combinando una sólida base teórica con una intensa práctica en talleres y laboratorios equipados con tecnología de punta. Creemos firmemente en el poder de la educación para transformar vidas y construir un futuro próspero.</p>
+                <p>Con especialidades en Informática, Programación y Maestro Mayor de Obras, ofrecemos las "Tecnología y Habilidades para el Futuro" que el mercado laboral demanda, fomentando la innovación, el pensamiento crítico y el trabajo en equipo.</p>
+            </div>
+        </section>
+
+         <section id="hero-banner">
+        </section>
+
+        <section id="tecnicaturas">
+            <h2>Nuestras Tecnicaturas</h2>
+            <div class="tecnicaturas-container">
+                <article class="tecnicatura-card">
+                    <img src="./images/programacion.webp" alt="">
+                    <h3>Técnico en Programación</h3>
+                    <p>Formamos profesionales con sólidas bases en el desarrollo de software, capaces de crear soluciones innovadoras y eficientes para el mundo digital. Aprenderás lenguajes de programación, bases de datos y desarrollo web.</p>
+                    <a href="#" class="button">Más Información</a>
+                </article>
+                <article class="tecnicatura-card">
+                    <img src="./images/informatica.webp" alt="">
+                    <h3>Técnico en Informática</h3>
+                    <p>Preparamos expertos en hardware, redes y sistemas operativos. Nuestros estudiantes adquieren las habilidades para gestionar la infraestructura tecnológica, diagnosticar y resolver problemas informáticos.</p>
+                    <a href="#" class="button">Más Información</a>
+                </article>
+                <article class="tecnicatura-card">
+                    <img src="./images/mmo.webp" alt="">
+                    <h3>Técnico en Maestro Mayor de Obras</h3>
+                    <p>Capacitamos a futuros maestros mayores de obras para liderar y ejecutar proyectos de construcción, desde el diseño y la planificación hasta la dirección de obra, con énfasis en la seguridad y la calidad.</p>
+                    <a href="#" class="button">Más Información</a>
+                </article>
+                <article class="tecnicatura-card">
+                    <img src="./images/gas.webp" alt="">
+                    <h3>EPS Gas</h3>
+                    <p>Escuela Profesional Secundaria, propuesta de formacion dentro de la escuela tecnica, que propone un formato dinamico de trabajo con una orientacion en instalacion de gas</p>
+                    <a href="#" class="button">Más Información</a>
+                </article>
+                <article class="tecnicatura-card">
+                    <img src="./images/web.webp" alt="">
+                    <h3>EPS Web</h3>
+                    <p>Escuela Profesional Secundaria, propuesta de formacion dentro de la escuela tecnica, que propone un formato dinamico de trabajo con una orientacion en diseño web</p>
+                    <a href="#" class="button">Más Información</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="featured-projects">
+            <h2>Proyectos Destacados</h2>
+            <div class="projects-container">
+                <article class="project-card">
+                    <img src="./images/haciendoajedrez.webp" alt="Imagen del Proyecto 1">
+                    <h3>Haciendo Ajedrez</h3>
+                    <p>Proyecto de los 3ros, que nos represento en la feria de ciencias a nivel escolar, distrital y nacional. Es llevado adelante en el espacio de los talleres</p>
+                    <a href="#" class="button">Ver Proyecto</a>
+                </article>
+                <article class="project-card">
+                    <img src="./images/clubciencias.webp" alt="Imagen del Proyecto 2">
+                    <h3>Club de ciencias</h3>
+                    <p>Espacio designado para la investigacion y desarrollo a cargo de los estudiantes de todos los años que deseen llevar adelante sus ideas de investigacion, desarrollo, robotica, cientificos,entre otros.</p>
+                    <a href="#" class="button">Ver Proyecto</a>
+                </article>
+                <article class="project-card">
+                    <img src="./images/acuestre.webp" alt="Imagen del Proyecto 3">
+                    <h3>Centro ecuestre "La Merced"</h3>
+                    <p>Dentro de las practicas profesionalizantes de Maestro Mayor de Obras, se realiza una articulacion con este centro terapeutico.</p>
+                    <a href="./projects.html#project3" class="button">Ver Proyecto</a>
+                </article>
+
+                <article class="project-card">
+                    <img src="./images/parrilla.webp" alt="Imagen del Proyecto 3">
+                    <h3>Parrilla Escolar</h3>
+                    <p>diseño de planos en papel y digital, estructura, encofrado, llenado de la losa/mesada principal.</p>
+                    <a href="#" class="button">Ver Proyecto</a>
+                </article>
+                <article class="project-card">
+                    <img src="./images/simuladormanejo.webp" alt="Imagen del Proyecto 3">
+                    <h3>Simulador de Manejo </h3>
+                    <p>Proyecto de los estudiantes de 7mo Tecnicos en programacion, que consiste en una herramienta para aprender a manejar sin tener la necesidad de contar con un automovil</p>
+                    <a href="#" class="button">Ver Proyecto</a>
+                </article>
+                <article class="project-card">
+                    <img src="./images/roxy.webp" alt="Imagen del Proyecto 3">
+                    <h3>Robot IA  </h3>
+                    <p>Robot interactivo, que gracias a su IA se transforma en un asistente de apoyo emocional</p>
+                    <a href="#" class="button">Ver Proyecto</a>
+                </article>
+                </div>
+            <a href="#" class="button button-centered">Ver Todos los Proyectos</a>
+        </section>
+
+        <section id="location-preview">
+            <h2>Nuestra Ubicación</h2>
+            <div class="ubicacion">
+                <img src="./images/frentescuela.webp" alt="Vista panorámica de la Escuela Técnica N°5">
+                <div class="direccion">
+                    <h3>Direccion: calle 368B y 316</h3>
+                    <h3>Ranelagh, Berazategui</h3>
+                    <h3>WhatsApp: <a href="https://wa.me/1527613366" target="_blank">1127613366</a></h3>
+                    <h3>Colectivos que te acercan:</h3>
+                    <ul>
+                       <h3>➡️ 603</h3>
+                       <h3>➡️ 619</h3>
+                       <h3>➡️ 418</h3>
+                       <br>
+                       <a href="https://maps.app.goo.gl/zonBj7Qp4UZgxakM8" target="_blank">➡️ Como llegar?</a>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="image-slider">
+            <h2>Momentos de la Escuela</h2>
+            <div class="slider-container">
+                <div class="slide fade">
+                    <img src="img_galeria/img1.webp" alt="Actividad en el aula">
+                </div>
+                <div class="slide fade">
+                    <img src="img_galeria/img10.webp" alt="Alumnos en el taller">
+                </div>
+                <div class="slide fade">
+                    <img src="img_galeria/img11.webp" alt="Evento escolar">
+                </div>
+                 <div class="slide fade">
+                    <img src="img_galeria/img12.webp" alt="Evento escolar">
+                </div>
+                <div class="slide fade">
+                    <img src="img_galeria/img13.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img14.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img15.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img16.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img17.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img2.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img3.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img4.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img5.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img6.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img7.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img8.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/img9.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_4792.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_5109.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_5394.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_5492.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_8463.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_5689.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_5952.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_8411.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_5689.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_5952.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_8134.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_6080.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_6092.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_6103.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_6247.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_6258.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_7197.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_7681.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_7698.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_7879.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_7984.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_8007.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_8089.webp" alt="Evento escolar">
+                    <div class="text">Eventos y celebraciones</div>
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_8036.webp" alt="Evento escolar">
+                </div><div class="slide fade">
+                    <img src="img_galeria/IMG_8071.webp" alt="Evento escolar">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+            <br>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div id="contact-info">
+            <div class="contact-details"> 
+                <h3>Contáctanos</h3>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/tecnica_n5_berazategui?igsh=dTh5ZGV2eGV4OWxp&utm_source=qr" target="_blank" aria-label="Instagram de la escuela"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1BTXHUfrAe/?mibextid=wwXIfr" target="_blank" aria-label="Facebook de la escuela"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <p>WHATSAPP: <a href="https://wa.me/1527613366" target="_blank">1127613366</a></p>
+                <p>CORREO: <a href="mailto:tecnica5berazategui@abc.gob.ar">tecnica5berazategui@abc.gob.ar</a></p>
+                <img src="./images/LOGO2.webp" alt="">
+            </div>
+            <div class="map-container">
+                <h4>Dónde Encontrarnos</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d539.5331577544376!2d-58.18799536256989!3d-34.78882301291982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3298bdd7b6e03%3A0x9b23e70f725df856!2sEscuela%20de%20Educaci%C3%B3n%20Secundaria%20T%C3%A9cnica%20(E.E.S.T.)%20N%C2%BA5!5e0!3m2!1ses!2sar!4v1758758575828!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <p class="copyright">© 2025 E.E.S.T N°5 "Dr. Manuel Sadosky". Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
