@@ -1,0 +1,439 @@
+/* --- ESTILOS BASE Y TIPOGRAFÍA --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.header {
+    background: #007bff;
+    color: white;
+    padding: 1.5em 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.nav a:hover {
+    color: #ff8c00;
+}
+
+.main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: none;
+    height: auto; 
+}
+
+
+/* --- ESTILOS DE LA NOTICIA BASE Y TIPOGRAFÍA --- */
+.noticia-card {
+    border-radius: 8px;
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%; 
+    padding: 0; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+    display: flex; /* Asegura el formato de flexbox interno */
+    flex-direction: column; /* Por defecto, apila contenido */
+    overflow: hidden; /* Evita que las sombras internas se salgan */
+}
+
+.noticia-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.noticia-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    /* CORRECCIÓN CLAVE: Las imágenes internas ahora tienen un max-width para URLs */
+    max-width: 100%; 
+    border-radius: 4px;
+}
+
+.noticia-card h3 {
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    color: #007bff;
+    font-size: 1.5em;
+    word-wrap: break-word; 
+    overflow-wrap: break-word; /* Soporte mejorado */
+}
+.noticia-card h4 {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 1.1em;
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+}
+
+.noticia-card p {
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+    /* CORRECCIÓN CLAVE: Agregamos esto para asegurar el quiebre de URLs/texto largo */
+    min-width: 0; 
+    /* Esta línea estaba causando desborde en tu CSS anterior */
+    width: auto; 
+}
+
+.noticia-card a {
+    color: #ff8c00;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block; 
+    margin-top: 10px;
+    /* CORRECCIÓN CLAVE: Esto asegura que las URLs de links externos se rompan */
+    word-break: break-all;
+}
+.noticia-card a:hover {
+    color: #007bff;
+}
+
+
+/* --- ESTILOS PARA LA CUADRÍCULA DE NOTICIAS --- */
+
+#grid-noticias {
+    display: grid;
+    grid-template-columns: 50% 50%; 
+    /* CORRECCIÓN CLAVE: Usamos auto, max-content para asegurar que las filas crezcan uniformemente */
+    grid-template-rows: repeat(2, minmax(200px, max-content)); 
+    gap: 2rem; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    height: auto; 
+}
+
+/* 1. Estilo de la Noticia Principal (Columna 1) */
+.noticia-principal {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4; 
+    display: flex;
+    flex-direction: column;
+    height: auto; 
+}
+
+.noticia-principal img {
+    height: 350px; /* Incrementamos ligeramente para darle más impacto visual */
+    object-fit: cover; 
+    border-radius: 12px 12px 0 0;
+}
+
+.noticia-principal .card-content {
+    padding: 25px; 
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+
+/* 2. Estilo de las Noticias Secundarias (Columna 2) */
+.noticia-secundaria {
+    grid-column: 2 / 3;
+    display: flex; 
+    flex-direction: row; 
+    /* CORRECCIÓN CLAVE: Aseguramos que todas las secundarias tengan la misma altura */
+    height: 100%; 
+    width: auto; 
+    padding: 0; 
+}
+
+.noticia-secundaria img {
+    width: 150px; 
+    /* CORRECCIÓN CLAVE: Altura fija de la imagen para garantizar altura de tarjeta */
+    height: 100%; 
+    object-fit: cover; 
+    flex-shrink: 0; 
+    margin-right: 15px; 
+}
+
+.noticia-secundaria .card-content {
+    padding: 1rem; 
+    display: flex;  
+    flex-direction: column;
+    justify-content: center; 
+    flex-grow: 1;
+}
+
+.noticia-secundaria h3 {
+    font-size: 1.1em; 
+}
+.noticia-secundaria h4 {
+    font-size: 0.9em;
+}
+
+.noticia-secundaria p {
+    font-size: 0.85em; 
+    margin: 0;
+}
+
+
+/* --- ESTILOS ESPECÍFICOS PARA ARCHIVO.HTML --- */
+
+#lista-noticias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+/* Estilo para las tarjetas en el archivo (formato horizontal) */
+.noticia-archivo {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    /* Aseguramos que el contenido se envuelva */
+    overflow: hidden;
+}
+
+.noticia-archivo img {
+    width: 200px; 
+    height: 200px;
+    object-fit: contain;
+    flex-shrink: 0; 
+    margin-right: 20px;
+    border-radius: 1rem;
+}
+
+.noticia-archivo .card-content {
+    padding: 20px;
+    flex-grow: 1;
+    min-width: 0; /* CORRECCIÓN CLAVE: Permite que el contenido interno se comprima */
+}
+
+
+/* ============================================== */
+/* 3. RESPONSIVE (Móviles < 768px)      */
+/* ============================================== */
+@media (max-width: 768px) {
+    
+    /* Grid Noticias (index.html) */
+    #grid-noticias {
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+    
+    .noticia-principal, .noticia-secundaria {
+        grid-column: 1 / 2;
+        grid-row: auto;
+        height: auto;
+    }
+
+    .noticia-principal img {
+        height: 200px;
+    }
+
+    /* Secundarias en Móvil: Pasan a formato de columna */
+    .noticia-secundaria {
+        flex-direction: column; 
+        height: auto;
+    }
+    .noticia-secundaria img {
+        width: 100%; 
+        height: 150px;
+        margin-right: 0;
+        border-radius: 8px 8px 0 0; 
+    }
+    
+    /* Archivo Noticias (archivo.html) */
+    .noticia-archivo {
+        flex-direction: column; /* En móvil, se apila */
+        height: auto;
+    }
+    .noticia-archivo img {
+        width: 100%;
+        height: 150px;
+        margin-right: 0;
+        border-radius: 8px 8px 0 0;
+    }
+    .noticia-archivo .card-content {
+        padding: 15px;
+        min-width: 0;
+    }
+    
+    /* CORRECCIÓN CLAVE: Asegurar que el desarrollo de la noticia se envuelva */
+    .noticia-archivo p {
+        /* Fuerza la envoltura en contenedores pequeños */
+        word-break: break-word; 
+    }
+}
+
+
+/* --- ESTILOS DE FORMULARIO Y BOTONES (Se mantienen) --- */
+
+#formulario-noticia {
+    display: flex;
+    flex-direction: column;
+}
+
+#formulario-noticia label {
+    display: block;
+    margin-top: 15px; 
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #007bff; 
+    font-size: 1.1em;
+}
+
+#formulario-noticia input[type="text"], 
+#formulario-noticia input[type="url"], 
+#formulario-noticia textarea {
+    width: 100%;
+    padding: 12px; 
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1em;
+}
+
+#formulario-noticia input[type="text"]:focus, 
+#formulario-noticia input[type="url"]:focus, 
+#formulario-noticia textarea:focus {
+    border-color: #ff8c00; 
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2); 
+    outline: none; 
+}
+
+#formulario-noticia textarea {
+    resize: vertical; 
+    min-height: 120px;
+}
+
+#formulario-noticia button {
+    background-color: #28a745; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#formulario-noticia button:hover {
+    background-color: #1e7e34; 
+}
+
+#mensaje-estado {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    color: #007bff; 
+}
+
+header h1 {
+    font-size: 2.2em;
+}
+
+/* --- ESTILOS DEL BOTÓN DE ARCHIVO --- */
+#ver-mas-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.boton-archivo {
+    background-color: #007bff; 
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.boton-archivo:hover {
+    background-color: #ff8c00; 
+    color: #333;
+}
+
+
+/* --- ESTILO PARA EL BOTÓN DE LINK ADICIONAL EN ARCHIVO.HTML --- */
+
+.boton-adicional a{
+    background-color: #ff8c00; /* Naranja */
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+.boton-adicional:hover {
+    color: white;
+}
+
+/* Opcional: Aseguramos que el texto completo tenga un poco de margen */
+.desarrollo-completo {
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+
+/* --- ESTILOS PARA LOS BOTONES EN INDEX.HTML --- */
+
+.card-actions {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en móvil */
+    gap: 10px;
+    align-items: center;
+}
+
+.link-leer-mas {
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.link-leer-mas:hover {
+    background-color: #f8fafc;
+}
+
+.boton-adicional-card {
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-left: 4rem;
+}
+
+.boton-adicional-card:hover {
+   border:3px solid  #007bff;
+    color: white;
+}
