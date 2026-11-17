@@ -21,9 +21,15 @@ html {
     scroll-behavior: smooth; /* Para un scroll suave al hacer clic en enlaces internos */
 }
 
+/* Respeta la preferencia del usuario de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 body {
-   
-    /* font-family: 'Arial', sans-serif; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
@@ -68,7 +74,7 @@ p {
 }
 
 a {
-    color: var(--accent-color);
+    color: #0077A8; /* Cian oscuro: 4.99:1 sobre blanco (cumple AA); el cian original daba 2.5:1 */
     text-decoration: none;
 }
 
@@ -79,16 +85,18 @@ a:hover {
 .button {
     display: inline-block;
     background-color: var(--secondary-color);
-    color: var(--white);
+    color: var(--primary-color); /* Texto oscuro sobre naranja: contraste AA (el blanco daba 2.15:1) */
+    font-weight: bold;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
     margin-top: 10px;
 }
 
 .button:hover {
     background-color: var(--primary-color);
+    color: var(--white);
     transform: translateY(-2px);
     text-decoration: none;
 }
@@ -217,6 +225,9 @@ nav ul li a:hover::after {
     width: 30px;
     height: 25px;
     z-index: 20; /* Por encima del nav si fuera necesario */
+    background: transparent;
+    border: 0;
+    padding: 0;
 }
 
 .burger div {
@@ -229,6 +240,7 @@ nav ul li a:hover::after {
 
 section {
     padding: 20px 0;
+    scroll-margin-top: 90px; /* Evita que la navbar fija tape el título al saltar a una ancla */
 }
 
 section:nth-of-type(odd) { /* Para alternar colores de fondo entre secciones */
@@ -238,15 +250,6 @@ section:nth-of-type(odd) { /* Para alternar colores de fondo entre secciones */
 section:nth-of-type(even) {
     background-color: var(--white);
 }
-
-.muestranual{
-  width: 100%;
-  height: 800px;
-  background-image: url(../escritorio.webp);
-  background-size: cover;
-  background-position: center;
-}
-
 
 /* Sección Acerca de la Escuela */
 #about-school .about-content {
@@ -277,7 +280,7 @@ section:nth-of-type(even) {
 }
 
 #hero-banner{
-    width: 100vw;
+    width: 100%; /* 100vw generaba scroll horizontal por la barra de scroll */
     height: 550px;
     background-color:#261964;
     background-image: url(../images/banner2.webp);
@@ -432,6 +435,7 @@ section:nth-of-type(even) {
     font-weight: bold;
     font-size: 20px;
     transition: 0.6s ease;
+    border: 0; /* Ahora son <button>: sin borde por defecto */
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: rgba(0,0,0,0.5);
@@ -538,7 +542,9 @@ footer {
 
 #contact-info .social-media a {
     color: var(--white);
-    font-size: 4em; 
+    font-size: 4em; /* Tamaño de los íconos SVG (width/height = 1em) */
+    display: inline-flex;
+    align-items: center;
     margin-right: 4rem;
     transition: color 0.3s ease;
 }
@@ -654,7 +660,6 @@ footer {
     nav ul.nav-active li:nth-child(4) { transition: all 0.5s ease 0.5s; opacity: 1; }
     nav ul.nav-active li:nth-child(5) { transition: all 0.5s ease 0.6s; opacity: 1; }
     nav ul.nav-active li:nth-child(6) { transition: all 0.5s ease 0.6s; opacity: 1; }
-    nav ul.nav-active li:nth-child(7) { transition: all 0.5s ease 0.6s; opacity: 1; }
 
     /* Animación del icono de hamburguesa */
     .burger.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
@@ -670,10 +675,6 @@ footer {
 
     section {
         padding: 50px 0;
-    }
-
-    .muestranual{
-         background-image: url(../movile.webp);
     }
 
     #about-school .about-content {
